@@ -7,10 +7,10 @@ public class main {
         int choice = 0;
         Library library = new Library();
 
-        // Adding some initial books
+        // Adding some pre-determined books to the library
         library.addBook(new Book("Java", "Jewel Gesim", "111-1111-11", 100));
         library.addBook(new Book("Contemporary World", "Theo Pondar", "121-1222-12", 50));
-        library.addBook(new Book("Again, But Better", "Sammy Rosal", "004-0024-2023", 150));
+        library.addBook(new Book("Again, But Better", "Sammy Rosal", "004-0024-23", 150));
 
         // Main Menu
         do {
@@ -51,11 +51,12 @@ public class main {
                         // Default error catcher
                         System.out.println("Invalid input. Please enter a number between 1 and 5.");
                 }
-                // Input string error catcher returns to main menu if in valid
+                // Input string error catcher returns to main menu if invalid
             } catch (InputMismatchException e) {
+                // Handle non-integer input for menu choices
                 System.out.println("Invalid input. Please enter a valid number.");
                 scan.nextLine(); 
             }
-        } while (choice != 5);
+        } while (choice != 5); // Continue the loop until the user selects option 5 to exit
     }
 }
